@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function computerPlay (){
+            strings = ["rock", "paper", "scissors"]
+            result = strings[Math.floor(Math.random() * strings.length)]
+            return result
+        }
+        function playRound (playerSelection, computerSelection) {
+            switch(computerSelection.toLowerCase()) {
+                case playerSelection.toLowerCase():
+                    return "It's a tie";
+                case "rock":
+                    if (playerSelection.toLowerCase() === "paper") {
+                        console.log("You Win! paper beats rock");
+                        return true;
+                    }
+                    console.log("You Lose! rock beats scissors");
+                    return false;
+                case "paper":
+                    if (playerSelection.toLowerCase() === "scissors") {
+                        console.log("You Win! scissors beats paper");
+                        return true;
+                    }
+                    console.log("You Lose! paper beats rock");
+                    return false;
+                case "scissors":
+                    if (playerSelection.toLowerCase() === "rock") {
+                        console.log("You Win! rock beats scissors");
+                        return true;
+                    }
+                    console.log("You Lose! scissors beats paper");
+                    return false;
+                default:
+                    return "Invalid input";
+            }
+        }
+        function game() {
+            const round = 5;
+            let i = 0;
+            let playerScore = 0;
+            let computerScore = 0;
+            while (i < round) {
+                if (playRound(prompt("rock, paper, scissors?"), computerPlay) === true) {
+                    playerScore++;
+                    console.log(playerScore, computerScore);
+                }
+                else if (playRound(prompt("rock, paper, scissors?"), computerPlay) === false) {
+                    computerScore++;
+                    console.log(playerScore, computerScore);
+                }
+            i++;
+            }
+            if (playerScore > computerScore) {
+                return "You Win!";
+            }
+            else if (computerScore > playerScore) {
+                return "You Lose!";
+            }
+            else {
+                return "It's a Tie!";
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
