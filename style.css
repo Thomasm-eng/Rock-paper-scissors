@@ -1,0 +1,41 @@
+#container {
+    display: grid;
+    padding: 15px;
+    
+}
+#container h1 {
+    margin: auto;
+}
+#container #score {
+    margin: auto;
+    margin-top: 50px;
+}
+#container .results{
+    margin: auto;
+    margin-top: 20px;
+    display: relative;
+}
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.img-container img{
+    max-width: 100%;
+    
+}
+button {
+    margin: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    outline: none;
+    border: solid 1px black;
+}
+button:hover {
+    box-shadow: 1px 1px 10px;
+}
+button .disabled {
+    pointer-events: none;
+}

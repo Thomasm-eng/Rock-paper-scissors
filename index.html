@@ -5,79 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-        let playerScore = 0;
-        let computerScore = 0;
-        function computerPlay (){
-            strings = ["rock", "paper", "scissors"]
-            result = strings[Math.floor(Math.random() * strings.length)]
-            return result
-        }
-        function playRound (playerSelection, computerSelection) {
-            switch(computerPlay()) {
-                case playerSelection.toLowerCase():
-                    console.log("It's a tie");
-                    return null;
-                case "rock":
-                    if (playerSelection.toLowerCase() === "paper") {
-                        console.log("You Win! paper beats rock");
-                        return true;
-                    }
-                    console.log("You Lose! rock beats scissors");
-                    return false;
-                case "paper":
-                    if (playerSelection.toLowerCase() === "scissors") {
-                        console.log("You Win! scissors beats paper");
-                        return true;
-                    }
-                    console.log("You Lose! paper beats rock");
-                    return false;
-                case "scissors":
-                    if (playerSelection.toLowerCase() === "rock") {
-                        console.log("You Win! rock beats scissors");
-                        return true;
-                    }
-                    console.log("You Lose! scissors beats paper");
-                    return false;
-                default:
-                    console.log("Invalid input");
-                    
-            }
-        }
+    <div id="container">
+        <h1>Rock Paper Scissors</h1>
+        <div id="score">0 - 0</div>
+        <div class="img-container">
+            <button id="rock"><img src="https://static.thenounproject.com/png/477914-200.png"></button>
+            <button id="paper"><img src="https://sanyogitapandit.github.io/Rock-Paper-Scissor/images/paper.png"></button>
+            <button id="scissors"><img src="https://static.thenounproject.com/png/477919-200.png"></button>
+        </div>
         
-        function win() {
-            if (playerScore > computerScore) {
-                return "You Win!";
-            }
-            else if (computerScore > playerScore) {
-                return "You Lose!";
-            }
-            else {
-                return "It's a Tie!";
-            }
-        }
-        function game() {
-            let i = 0;
-            while (i < 5) {
-                let result = (playRound(prompt("rock, paper, scissors?"), computerPlay()));
-                if (result) {
-                    playerScore++;
-                }
-                else if (!result) {
-                    computerScore++;
-                }
-                
-            i++;
-            console.log("Player:", playerScore, "Computer:", computerScore);
-            }
-            console.log(win());
-        }
-        
-        game();
-        
+    </div> 
+    <script src="script.js">
+       
+
     </script>
-    
 </body>
 </html>
