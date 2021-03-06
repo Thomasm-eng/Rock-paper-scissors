@@ -40,13 +40,9 @@
         
         function win() {
             if (playerScore === 5) {
-               
-                
                 return "Game Over, You Win!"
             }
             else if (computerScore === 5) {
-                
-                
                 return "Game Over, You Lose!"
             }
             else {
